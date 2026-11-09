@@ -1,9 +1,5 @@
 package src;
 
-import model.EscalaFeira;
-import model.Feira;
-import model.Feirante;
-
 public class Main {
    
     public static void main(String[] args) {
