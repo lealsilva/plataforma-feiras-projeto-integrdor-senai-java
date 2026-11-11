@@ -1,4 +1,3 @@
-
 package controller;
 
 import model.Feira;
@@ -11,24 +10,25 @@ public class GerenciadorDaFeira {
     
     private Feirante [][] matrizBancas;
     
-    public GerenciadorDaFeira(Feira feira, int linha, int coluna){
+    public GerenciadorDaFeira(Feira feira){
         this.feira = feira;
-        this.matrizBancas = new Feirante[linha][coluna];
+        this.matrizBancas = new Feirante[feira.getQuantidadeDeLinhas()][feira.getQuantidadeDeColunas()];
     }
     
-    public void adicionrFeirante(Feirante feirante, int linha, int coluna){
+    public boolean adicionarFeirante(Feirante feirante){
         
-        if(linha >= 0 && linha < matrizBancas.length && coluna >= 0 && coluna < matrizBancas[0].length){
-            if(matrizBancas[linha][coluna] == null){
-                matrizBancas[linha][coluna] = feirante;
-            }else{
-                System.out.println("Espaço ocupado");
+        for (int linha = 0; linha < matrizBancas.length; linha++) {
+            for (int coluna = 0; coluna < matrizBancas[linha].length; coluna++) {
+           
+                if(matrizBancas[linha][coluna] == null){
+                    matrizBancas[linha][coluna] = feirante;
+                    return true;
+                } 
             }
-        }else{
-            System.out.println("Espaço inexistente");
         }
+        return false;
     }
-    
+
     public void mostrarBanca(){
         
         for (int linha = 0; linha < matrizBancas.length; linha++) {

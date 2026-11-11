@@ -8,6 +8,9 @@ public class Feira {
     private String bairro;
     private double latitude;
     private double longitude;
+    private int quantidadeDeLinhas;
+    private int quantidadeDeColunas;
+
 
     /**
      * @return the id
@@ -77,17 +80,38 @@ public class Feira {
      */
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }   
+
+    public int getQuantidadeDeLinhas() {
+        return quantidadeDeLinhas;
     }
+
+    public void setQuantidadeDeLinhas(int quantidadeDeLinhas) {
+        this.quantidadeDeLinhas = quantidadeDeLinhas;
+    }
+
+    public int getQuantidadeDeColunas() {
+        return quantidadeDeColunas;
+    }
+
+    public void setQuantidadeDeColunas(int quantidadeDeColunas) {
+        this.quantidadeDeColunas = quantidadeDeColunas;
+    }
+    
+    
+        
     public Feira(){
     
     }
     
-    public Feira(int id, String nome, String bairro, double latitude, double longitude) {
+    public Feira(int id, String nome, String bairro, double latitude, double longitude, int quantidadeDeLinhas, int quantidadeDeColunas) {
         this.id = id;
         this.nome = nome;
         this.bairro = bairro;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.quantidadeDeLinhas = quantidadeDeLinhas;
+        this.quantidadeDeColunas = quantidadeDeColunas;
     } 
     
 }
